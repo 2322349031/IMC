@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CardDOMapper">
+
+    <insert id="insert" parameterType="domain.CardDO">
+        insert into card(id,title,subtitle,description,picture,cardtype,person,ext,status,gmtcreate,gmtupdate)
+        values (#{id},#{title},#{subtitle},#{description},#{picture},#{cardtype},#{person},#{ext},#{status},now(),now())
+    </insert>
+
+    <select id="select" parameterType="domain.CardDO" resultType="java.util.Map">
+        select * from card
+        <where>
+            <if test="status != null">
+                status = #{status}
+            </if>
+            <if test="subtitle != null">
+                and subtitle like #{subtitle}
+            </if>
+            <if test="person != null">
+                and person like #{person}
+            </if>
+        </where>
+    </select>
+
+    <delete id="delete" parameterType="int">
+        delete
+        from card
+        where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="domain.CardDO">
+        update card
+        <set>
+            gmtupdate = now(),
+            <if test="id != null">id=#{id},</if>
+            <if test="title != null">title=#{title},</if>
+            <if test="subtitle != null">subtitle=#{subtitle},</if>
+            <if test="description != null">description=#{description},</if>
+            <if test="picture != null">picture=#{picture},</if>
+            <if test="cardtype != null">cardtype=#{cardtype},</if>
+            <if test="person != null">person=#{person},</if>
+            <if test="ext != null">ext=#{ext},</if>
+            <if test="status != null">status=#{status},</if>
+        </set>
+        where id=#{id}
+    </update>
+
+
+</mapper>

@@ -12,7 +12,6 @@ import java.util.Map;
 public interface CardDOMapper {
     public int insert(CardDO cardDO);
     public List<Map<String,Object>> select(CardDO cardDO);
-    public int delete(int id);
+    public CardDO find(int id);
     public int update(CardDO cardDO);
-
 }

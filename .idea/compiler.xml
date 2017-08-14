@@ -22,11 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="IMC" />
+        <module name="IMC-api" />
+        <module name="IMC-biz" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="IMC" target="1.5" />
+      <module name="IMC-api" target="1.5" />
+      <module name="IMC-biz" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

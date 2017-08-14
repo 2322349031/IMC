@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IMC.iml" filepath="$PROJECT_DIR$/IMC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IMC-api/IMC-api.iml" filepath="$PROJECT_DIR$/IMC-api/IMC-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IMC-biz/IMC-biz.iml" filepath="$PROJECT_DIR$/IMC-biz/IMC-biz.iml" />
     </modules>
   </component>
 </project>
